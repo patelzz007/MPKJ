@@ -1,13 +1,13 @@
 <form wire:submit.prevent="submit" class="pt-3">
 
-    <div class="form-group {{ $errors->has('perkhidmatan.bahagian') ? 'invalid' : '' }}">
-        <label class="form-label required" for="bahagian">{{ trans('cruds.perkhidmatan.fields.bahagian') }}</label>
-        <input class="form-control" type="text" name="bahagian" id="bahagian" required wire:model.defer="perkhidmatan.bahagian">
+    <div class="form-group {{ $errors->has('perkhidmatan.jenis') ? 'invalid' : '' }}">
+        <label class="form-label required" for="jenis">{{ trans('cruds.perkhidmatan.fields.jenis') }}</label>
+        <input class="form-control" type="text" name="jenis" id="jenis" required wire:model.defer="perkhidmatan.jenis">
         <div class="validation-message">
-            {{ $errors->first('perkhidmatan.bahagian') }}
+            {{ $errors->first('perkhidmatan.jenis') }}
         </div>
         <div class="help-block">
-            {{ trans('cruds.perkhidmatan.fields.bahagian_helper') }}
+            {{ trans('cruds.perkhidmatan.fields.jenis_helper') }}
         </div>
     </div>
 

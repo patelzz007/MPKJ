@@ -18,16 +18,16 @@ class Perkhidmatan extends Model
 
     public $orderable = [
         'id',
-        'bahagian',
+        'jenis',
     ];
 
     public $filterable = [
         'id',
-        'bahagian',
+        'jenis',
     ];
 
     protected $fillable = [
-        'bahagian',
+        'jenis',
     ];
 
     protected $dates = [

@@ -47,7 +47,7 @@ class Create extends Component
             ],
             'appointment.name' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'appointment.email' => [
                 'email:rfc',
@@ -71,7 +71,7 @@ class Create extends Component
             ],
             'appointment.postcode' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'appointment.bahagian_id' => [
                 'integer',

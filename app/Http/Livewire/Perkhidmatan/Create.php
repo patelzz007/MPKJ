@@ -31,7 +31,7 @@ class Create extends Component
     protected function rules(): array
     {
         return [
-            'perkhidmatan.bahagian' => [
+            'perkhidmatan.jenis' => [
                 'string',
                 'required',
             ],

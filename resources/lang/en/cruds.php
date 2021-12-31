@@ -143,14 +143,14 @@ return [
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
-            'bahagian'          => 'Bahagian',
-            'bahagian_helper'   => ' ',
             'created_at'        => 'Created at',
             'created_at_helper' => ' ',
             'updated_at'        => 'Updated at',
             'updated_at_helper' => ' ',
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => ' ',
+            'jenis'             => 'Jenis Perkhidmatan',
+            'jenis_helper'      => ' ',
         ],
     ],
     'configuration' => [

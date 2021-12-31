@@ -13,7 +13,8 @@ return [
             'short_code' => 'en',
         ],
     ],
-    'pagination' => [
+    'registered_user_role' => 'User',
+    'pagination'           => [
         'options' => [
             10,
             25,

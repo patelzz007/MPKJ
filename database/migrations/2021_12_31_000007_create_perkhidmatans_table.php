@@ -10,7 +10,7 @@ class CreatePerkhidmatansTable extends Migration
     {
         Schema::create('perkhidmatans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('bahagian');
+            $table->string('jenis');
             $table->timestamps();
             $table->softDeletes();
         });

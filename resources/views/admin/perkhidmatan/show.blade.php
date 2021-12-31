@@ -27,10 +27,10 @@
                         </tr>
                         <tr>
                             <th>
-                                {{ trans('cruds.perkhidmatan.fields.bahagian') }}
+                                {{ trans('cruds.perkhidmatan.fields.jenis') }}
                             </th>
                             <td>
-                                {{ $perkhidmatan->bahagian }}
+                                {{ $perkhidmatan->jenis }}
                             </td>
                         </tr>
                     </tbody>
