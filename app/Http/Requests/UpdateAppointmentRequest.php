@@ -36,7 +36,7 @@ class UpdateAppointmentRequest extends FormRequest
             ],
             'name' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'email' => [
                 'email:rfc',
@@ -60,7 +60,7 @@ class UpdateAppointmentRequest extends FormRequest
             ],
             'postcode' => [
                 'string',
-                'nullable',
+                'required',
             ],
             'bahagian_id' => [
                 'integer',

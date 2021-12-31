@@ -21,8 +21,8 @@
         </div>
     </div>
     <div class="form-group {{ $errors->has('appointment.name') ? 'invalid' : '' }}">
-        <label class="form-label" for="name">{{ trans('cruds.appointment.fields.name') }}</label>
-        <input class="form-control" type="text" name="name" id="name" wire:model.defer="appointment.name">
+        <label class="form-label required" for="name">{{ trans('cruds.appointment.fields.name') }}</label>
+        <input class="form-control" type="text" name="name" id="name" required wire:model.defer="appointment.name">
         <div class="validation-message">
             {{ $errors->first('appointment.name') }}
         </div>
@@ -81,8 +81,8 @@
         </div>
     </div>
     <div class="form-group {{ $errors->has('appointment.postcode') ? 'invalid' : '' }}">
-        <label class="form-label" for="postcode">{{ trans('cruds.appointment.fields.postcode') }}</label>
-        <input class="form-control" type="text" name="postcode" id="postcode" wire:model.defer="appointment.postcode">
+        <label class="form-label required" for="postcode">{{ trans('cruds.appointment.fields.postcode') }}</label>
+        <input class="form-control" type="text" name="postcode" id="postcode" required wire:model.defer="appointment.postcode">
         <div class="validation-message">
             {{ $errors->first('appointment.postcode') }}
         </div>

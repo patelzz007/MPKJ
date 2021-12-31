@@ -9,9 +9,9 @@ class AddRelationshipFieldsToAppointmentsTable extends Migration
     public function up()
     {
         Schema::table('appointments', function (Blueprint $table) {
-            $table->unsignedBigInteger('masa_temu_janji_id');
+            $table->unsignedBigInteger('masa_temu_janji_id')->nullable();
             $table->foreign('masa_temu_janji_id', 'masa_temu_janji_fk_5623428')->references('id')->on('masa_temu_janjis');
-            $table->unsignedBigInteger('bahagian_id');
+            $table->unsignedBigInteger('bahagian_id')->nullable();
             $table->foreign('bahagian_id', 'bahagian_fk_5623009')->references('id')->on('bahagians');
         });
     }

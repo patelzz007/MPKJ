@@ -45,8 +45,8 @@
                             @include('components.table.sort', ['field' => 'id'])
                         </th>
                         <th>
-                            {{ trans('cruds.perkhidmatan.fields.bahagian') }}
-                            @include('components.table.sort', ['field' => 'bahagian'])
+                            {{ trans('cruds.perkhidmatan.fields.jenis') }}
+                            @include('components.table.sort', ['field' => 'jenis'])
                         </th>
                         <th>
                         </th>
@@ -62,7 +62,7 @@
                                 {{ $perkhidmatan->id }}
                             </td>
                             <td>
-                                {{ $perkhidmatan->bahagian }}
+                                {{ $perkhidmatan->jenis }}
                             </td>
                             <td>
                                 <div class="flex justify-end">

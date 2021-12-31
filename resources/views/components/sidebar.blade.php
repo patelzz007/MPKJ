@@ -81,7 +81,7 @@
                 @endcan
                 @can('configuration_access')
                     <li class="items-center">
-                        <a class="has-sub {{ request()->is("admin/bahagians*")||request()->is("admin/masa-temu-janjis*")||request()->is("admin/perkhidmatans*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
+                        <a class="has-sub {{ request()->is("admin/bahagians*")||request()->is("admin/perkhidmatans*")||request()->is("admin/masa-temu-janjis*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
                             <i class="fa-fw fas c-sidebar-nav-icon fa-cogs">
                             </i>
                             {{ trans('cruds.configuration.title') }}
@@ -96,21 +96,21 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('masa_temu_janji_access')
-                                <li class="items-center">
-                                    <a class="{{ request()->is("admin/masa-temu-janjis*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.masa-temu-janjis.index") }}">
-                                        <i class="fa-fw c-sidebar-nav-icon fas fa-cogs">
-                                        </i>
-                                        {{ trans('cruds.masaTemuJanji.title') }}
-                                    </a>
-                                </li>
-                            @endcan
                             @can('perkhidmatan_access')
                                 <li class="items-center">
                                     <a class="{{ request()->is("admin/perkhidmatans*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.perkhidmatans.index") }}">
                                         <i class="fa-fw c-sidebar-nav-icon fas fa-cogs">
                                         </i>
                                         {{ trans('cruds.perkhidmatan.title') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('masa_temu_janji_access')
+                                <li class="items-center">
+                                    <a class="{{ request()->is("admin/masa-temu-janjis*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.masa-temu-janjis.index") }}">
+                                        <i class="fa-fw c-sidebar-nav-icon fas fa-cogs">
+                                        </i>
+                                        {{ trans('cruds.masaTemuJanji.title') }}
                                     </a>
                                 </li>
                             @endcan

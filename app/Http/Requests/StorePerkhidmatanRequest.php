@@ -25,7 +25,7 @@ class StorePerkhidmatanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'bahagian' => [
+            'jenis' => [
                 'string',
                 'required',
             ],
