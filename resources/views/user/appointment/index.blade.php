@@ -5,18 +5,18 @@
         <div class="card-header border-b border-blueGray-200">
             <div class="card-header-container">
                 <h6 class="card-title">
-                    {{ trans('cruds.perkhidmatan.title_singular') }}
+                    {{ trans('cruds.appointment.title_singular') }}
                     {{ trans('global.list') }}
                 </h6>
 
-                @can('perkhidmatan_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.configuration.perkhidmatans.create') }}">
-                        {{ trans('global.add') }} {{ trans('cruds.perkhidmatan.title_singular') }}
+                @can('appointment_create')
+                    <a class="btn btn-indigo" href="{{ route('admin.appointments.create') }}">
+                        {{ trans('global.add') }} {{ trans('cruds.appointment.title_singular') }}
                     </a>
                 @endcan
             </div>
         </div>
-        @livewire('perkhidmatan.index')
+        @livewire('appointment.index')
 
     </div>
 </div>

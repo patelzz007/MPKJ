@@ -4,10 +4,17 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Listeners\Listeners;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\Role;
+use App\Models\User;
+use App\Models\RoleUser;
+use App\Listeners\AssignRoleForRegisteredUser;
 
 class LoginController extends Controller
 {
+    protected $user;
+    protected $id;
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -26,7 +33,19 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected function redirectTo()
+    {
+        $role = RoleUser::where('user_id', auth()->user()->id)->first();
+        // dd($role->role_id );
+        if ($role->role_id == '1') {
+            return RouteServiceProvider::HOME;
+        }else if ($role->role_id == '2') {
+            return RouteServiceProvider::USER;
+        }else if ($role->role_id == '3') {
+            dd("Staff Here");
+        }
+    }
 
     /**
      * Create a new controller instance.

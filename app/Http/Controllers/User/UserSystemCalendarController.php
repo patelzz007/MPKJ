@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
@@ -8,7 +8,7 @@ use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class SystemCalendarController extends Controller
+class UserSystemCalendarController extends Controller
 {
     public $sources = [
         [
@@ -17,7 +17,7 @@ class SystemCalendarController extends Controller
             'field'      => 'id',
             'prefix'     => 'appointment-calender',
             'suffix'     => '',
-            'route'      => 'admin.appointments.show',
+            'route'      => 'user.appointments.show',
         ],
     ];
 
@@ -48,6 +48,6 @@ class SystemCalendarController extends Controller
             }
         }
 
-        return view('admin.system-calendar.index', compact('events'));
+        return view('user.system-calendar.index', compact('events'));
     }
 }

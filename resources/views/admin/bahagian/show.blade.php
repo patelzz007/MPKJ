@@ -38,11 +38,11 @@
             </div>
             <div class="form-group">
                 @can('bahagian_edit')
-                    <a href="{{ route('admin.bahagians.edit', $bahagian) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('admin.configuration.bahagians.edit', $bahagian) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.bahagians.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.configuration.bahagians.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

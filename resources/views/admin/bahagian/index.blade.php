@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('bahagian_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.bahagians.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.configuration.bahagians.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.bahagian.title_singular') }}
                     </a>
                 @endcan

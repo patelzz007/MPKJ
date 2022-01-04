@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('masa_temu_janji_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.masa-temu-janjis.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.configuration.masa-temu-janjis.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.masaTemuJanji.title_singular') }}
                     </a>
                 @endcan

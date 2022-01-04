@@ -90,6 +90,11 @@ class User extends Authenticatable implements HasLocalePreference
         return $this->belongsToMany(Role::class);
     }
 
+    public function role()
+    {
+        return $this->hasOne(RoleUser::class, 'user_id', 'id');
+    }
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

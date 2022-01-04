@@ -77,7 +77,7 @@ class Index extends Component
 
         $masaTemuJanjis = $query->paginate($this->perPage);
 
-        return view('livewire.masa-temu-janji.index', compact('masaTemuJanjis', 'query'));
+        return view('livewire.configuration.masa-temu-janji.index', compact('masaTemuJanjis', 'query'));
     }
 
     public function deleteSelected()

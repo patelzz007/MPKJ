@@ -15,7 +15,7 @@
         <button class="btn btn-indigo mr-2" type="submit">
             {{ trans('global.save') }}
         </button>
-        <a href="{{ route('admin.masa-temu-janjis.index') }}" class="btn btn-secondary">
+        <a href="{{ route('admin.configuration.masa-temu-janjis.index') }}" class="btn btn-secondary">
             {{ trans('global.cancel') }}
         </a>
     </div>

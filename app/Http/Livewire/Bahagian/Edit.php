@@ -16,7 +16,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.bahagian.edit');
+        return view('livewire.configuration.bahagian.edit');
     }
 
     public function submit()
@@ -25,7 +25,7 @@ class Edit extends Component
 
         $this->bahagian->save();
 
-        return redirect()->route('admin.bahagians.index');
+        return redirect()->route('admin.configuration.bahagians.index');
     }
 
     protected function rules(): array
