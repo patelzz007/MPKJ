@@ -14,7 +14,7 @@
         @include('components.sidebar.user-sidebar')
         @break
 
-    @case(2)
+    @case(3)
         {{-- <p>Bitches</p> --}}
         @break
 @endswitch

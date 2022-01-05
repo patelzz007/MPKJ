@@ -19,6 +19,7 @@ class Appointment extends Model
 
     public $orderable = [
         'id',
+        'user.user_id',
         'appointment_date',
         'masa_temu_janji.masa',
         'name',
@@ -33,6 +34,7 @@ class Appointment extends Model
 
     public $filterable = [
         'id',
+        'user.user_id',
         'appointment_date',
         'masa_temu_janji.masa',
         'name',
@@ -54,6 +56,7 @@ class Appointment extends Model
 
     protected $fillable = [
         'appointment_date',
+        'user_id',
         'masa_temu_janji_id',
         'name',
         'email',
@@ -73,6 +76,11 @@ class Appointment extends Model
     public function setAppointmentDateAttribute($value)
     {
         $this->attributes['appointment_date'] = $value ? Carbon::createFromFormat(config('project.date_format'), $value)->format('Y-m-d') : null;
+    }
+
+    public function User()
+    {
+        return $this->belongTo(User::class);
     }
 
     public function masaTemuJanji()

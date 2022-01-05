@@ -69,7 +69,8 @@ class Index extends Component
 
     public function render()
     {
-        $query = Appointment::with(['masaTemuJanji', 'bahagian'])->advancedFilter([
+        $user = auth()->user();
+        $query = Appointment::with(['masaTemuJanji', 'bahagian'])->where('user_id', $user->id)->advancedFilter([
             's'               => $this->search ?: null,
             'order_column'    => $this->sortBy,
             'order_direction' => $this->sortDirection,

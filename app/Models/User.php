@@ -58,6 +58,11 @@ class User extends Authenticatable implements HasLocalePreference
         'deleted_at',
     ];
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getIsAdminAttribute()
     {
         return $this->roles()->where('title', 'Admin')->exists();

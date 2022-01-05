@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('content')
 <div class="row">
     <div class="card bg-white">
@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('appointment_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.appointments.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('user.appointments.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.appointment.title_singular') }}
                     </a>
                 @endcan
