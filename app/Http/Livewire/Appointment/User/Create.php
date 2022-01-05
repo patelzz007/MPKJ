@@ -1,16 +1,19 @@
 <?php
 
-namespace App\Http\Livewire\Appointment;
+namespace App\Http\Livewire\Appointment\User;
 
+use Auth;
 use App\Models\Appointment;
 use App\Models\Bahagian;
 use App\Models\MasaTemuJanji;
 use Livewire\Component;
+use App\User;
+use App\Models\RoleUser;
 
-class Edit extends Component
+
+class Create extends Component
 {
     public Appointment $appointment;
-
     public array $listsForFields = [];
 
     public function mount(Appointment $appointment)
@@ -21,16 +24,21 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.appointment.edit');
+        return view('livewire.appointment.user.create');
     }
 
     public function submit()
     {
         $this->validate();
-
+        $user = auth()->user();
+        $role = RoleUser::where('user_id', auth()->user()->id)->first();
+        // $data = $this->appointment->all();
+        // $data['user_id'] = $user->id;
+        //dd($user);
+        $this->appointment->user_id = $user->id;
         $this->appointment->save();
 
-        return redirect()->route('admin.appointments.index');
+        return redirect()->route('user.appointments.index');
     }
 
     protected function rules(): array

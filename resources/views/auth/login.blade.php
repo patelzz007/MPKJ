@@ -55,14 +55,14 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap mt-6">
-                    <div class="w-1/2">
+                    {{-- <div class="w-1/2">
                         @if(Route::has('password.request'))
                             <a href="{{ route('password.request') }}" class="text-blueGray-200">
                                 <small>{{ __('global.forgot_password') }}</small>
                             </a>
                         @endif
-                    </div>
-                    <div class="w-1/2 text-right">
+                    </div> --}}
+                    <div class="w-full text-right">
                         @if(Route::has('register'))
                             <a href="{{ route('register') }}" class="text-blueGray-200">
                                 <small>{{ __('global.register') }}</small>

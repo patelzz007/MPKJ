@@ -109,7 +109,7 @@
                             </th>
                             <td>
                                 @if($appointment->bahagian)
-                                    <span class="badge badge-relationship">{{ $appointment->bahagian->bahagian ?? '' }}</span>
+                                    <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>
@@ -118,11 +118,11 @@
             </div>
             <div class="form-group">
                 @can('appointment_edit')
-                    <a href="{{ route('admin.appointments.edit', $appointment) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('user.appointments.edit', $appointment) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.appointments.index') }}" class="btn btn-secondary">
+                <a href="{{ route('user.appointments.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Appointment;
+namespace App\Http\Livewire\Appointment\Admin;
 
 use App\Http\Livewire\WithConfirmation;
 use App\Http\Livewire\WithSorting;
@@ -70,15 +70,20 @@ class Index extends Component
     public function render()
     {
         $user = auth()->user();
-        $query = Appointment::with(['masaTemuJanji', 'bahagian'])->where('user_id', $user->id)->advancedFilter([
+        $query = Appointment::with(['masaTemuJanji', 'bahagian'])->advancedFilter([
             's'               => $this->search ?: null,
             'order_column'    => $this->sortBy,
             'order_direction' => $this->sortDirection,
         ]);
+        // $query = Appointment::with(['masaTemuJanji', 'bahagian'])->where('user_id', $user->id)->advancedFilter([
+        //     's'               => $this->search ?: null,
+        //     'order_column'    => $this->sortBy,
+        //     'order_direction' => $this->sortDirection,
+        // ]);
 
         $appointments = $query->paginate($this->perPage);
 
-        return view('livewire.appointment.index', compact('appointments', 'query'));
+        return view('livewire.appointment.admin.index', compact('appointments', 'query'));
     }
 
     public function deleteSelected()

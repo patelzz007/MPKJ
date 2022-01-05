@@ -537,6 +537,24 @@ input[type=text].form-control:focus, input[type=email].form-control:focus, input
     --tw-text-opacity: 1;
     color: rgba(79, 70, 229, var(--tw-text-opacity))}
 
+.badge-masa-temu-janji {
+    --tw-bg-opacity: 1;
+    background-color: rgba(167, 243, 208, var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgba(5, 150, 105, var(--tw-text-opacity))}
+
+.badge-bahagian {
+    --tw-bg-opacity: 1;
+    background-color: rgba(245, 208, 254, var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgba(192, 38, 211, var(--tw-text-opacity))}
+
+.badge-perkhidmatan {
+    --tw-bg-opacity: 1;
+    background-color: rgba(254, 205, 211, var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgba(225, 29, 72, var(--tw-text-opacity))}
+
 .link-light-blue {
     margin-bottom: 0.25rem;
     display: flex;

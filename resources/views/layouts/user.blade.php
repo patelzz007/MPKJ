@@ -24,9 +24,12 @@
         <div class="relative md:ml-64 bg-blueGray-50 min-h-screen">
             <x-nav />
 
-            <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
+            <div class="relative md:pt-32 pb-32 pt-12" style="background-color: #F866CC">
                 <div class="px-4 md:px-10 mx-auto w-full">&nbsp;</div>
             </div>
+            {{-- <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
+                <div class="px-4 md:px-10 mx-auto w-full">&nbsp;</div>
+            </div> --}}
 
             <div class="relative px-4 md:px-10 mx-auto w-full min-h-full -m-48">
                 @if(session('status'))
