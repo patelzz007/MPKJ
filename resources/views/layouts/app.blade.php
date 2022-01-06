@@ -8,7 +8,8 @@
     <title>{{ __('panel.site_title') }}</title>
 </head>
 
-<body class="text-blueGray-700 antialiased" style="background-color: #F866CC">
+<body class="text-blueGray-700 antialiased" style="background-color: #123123">
+{{-- <body class="text-blueGray-700 antialiased" style="background-color: #F866CC"> --}}
     <main>
         @yield('content')
     </main>
