@@ -13,8 +13,10 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\UserProfileController;
 
 //User
+use App\Http\Controllers\User\UserHomeController;
 use App\Http\Controllers\User\UserAppointmentController;
 use App\Http\Controllers\User\UserSystemCalendarController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +65,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth']], function () {
+    // Dashboard
+    Route::get('/', [UserHomeController::class, 'index'])->name('home');
 
     // Appointment
     Route::resource('appointments', UserAppointmentController::class, ['except' => ['store', 'update', 'destroy']]);
