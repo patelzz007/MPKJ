@@ -132,7 +132,7 @@
                             </td>
                             <td>
                                 @if($appointment->bahagian)
-                                    <span class="badge badge-relationship">{{ $appointment->bahagian->bahagian ?? '' }}</span>
+                                    <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
                                 @endif
                             </td>
                             <td>

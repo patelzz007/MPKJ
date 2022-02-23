@@ -39,7 +39,7 @@
                             </th>
                             <td>
                                 @if($appointment->masaTemuJanji)
-                                    <span class="badge badge-relationship">{{ $appointment->masaTemuJanji->masa ?? '' }}</span>
+                                    <span class="badge badge-masa-temu-janji">{{ $appointment->masaTemuJanji->masa ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>
@@ -109,7 +109,7 @@
                             </th>
                             <td>
                                 @if($appointment->bahagian)
-                                    <span class="badge badge-relationship">{{ $appointment->bahagian->bahagian ?? '' }}</span>
+                                    <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>

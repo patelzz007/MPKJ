@@ -96,12 +96,12 @@
 }
 
 .form-group {
-    @apply mt-4
+    @apply mt-4 px-2
 }
 
-.form-group:first-of-type {
+/* .form-group:first-of-type {
     @apply mt-0
-}
+} */
 
 .validation-message {
     display: none;
@@ -205,6 +205,18 @@ textarea.form-control {
 
 .badge-relationship {
     @apply text-indigo-600 bg-indigo-200
+}
+
+.badge-masa-temu-janji{
+    @apply text-green-600 bg-green-200
+}
+
+.badge-bahagian{
+    @apply text-fuchsia-600 bg-fuchsia-200
+}
+
+.badge-perkhidmatan{
+    @apply text-rose-600 bg-rose-200
 }
 
 .link-light-blue {

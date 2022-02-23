@@ -99,6 +99,8 @@ return [
             'appointment_date_helper' => ' ',
             'masa_temu_janji'         => 'Masa Temu Janji',
             'masa_temu_janji_helper'  => ' ',
+            'user'             => 'User',
+            'user_helper'             => ' ',
         ],
     ],
     'bahagian' => [

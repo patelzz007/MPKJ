@@ -8,16 +8,16 @@
                 @endforeach
             </select>
 
-            @can('bahagian_delete')
+            @can('perkhidmatan_delete')
                 <button class="btn btn-rose ml-3 disabled:opacity-50 disabled:cursor-not-allowed" type="button" wire:click="confirm('deleteSelected')" wire:loading.attr="disabled" {{ $this->selectedCount ? '' : 'disabled' }}>
                     {{ __('Delete Selected') }}
                 </button>
             @endcan
 
             @if(file_exists(app_path('Http/Livewire/ExcelExport.php')))
-                <livewire:excel-export model="Bahagian" format="csv" />
-                <livewire:excel-export model="Bahagian" format="xlsx" />
-                <livewire:excel-export model="Bahagian" format="pdf" />
+                <livewire:excel-export model="Perkhidmatan" format="csv" />
+                <livewire:excel-export model="Perkhidmatan" format="xlsx" />
+                <livewire:excel-export model="Perkhidmatan" format="pdf" />
             @endif
 
 
@@ -41,43 +41,43 @@
                         <th class="w-9">
                         </th>
                         <th class="w-28">
-                            {{ trans('cruds.bahagian.fields.id') }}
+                            {{ trans('cruds.perkhidmatan.fields.id') }}
                             @include('components.table.sort', ['field' => 'id'])
                         </th>
                         <th>
-                            {{ trans('cruds.bahagian.fields.bahagian') }}
-                            @include('components.table.sort', ['field' => 'bahagian'])
+                            {{ trans('cruds.perkhidmatan.fields.jenis') }}
+                            @include('components.table.sort', ['field' => 'jenis'])
                         </th>
                         <th>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($bahagians as $bahagian)
+                    @forelse($perkhidmatans as $perkhidmatan)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $bahagian->id }}" wire:model="selected">
+                                <input type="checkbox" value="{{ $perkhidmatan->id }}" wire:model="selected">
                             </td>
                             <td>
-                                {{ $bahagian->id }}
+                                {{ $perkhidmatan->id }}
                             </td>
                             <td>
-                                {{ $bahagian->bahagian }}
+                                {{ $perkhidmatan->jenis }}
                             </td>
                             <td>
                                 <div class="flex justify-end">
-                                    @can('bahagian_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.bahagians.show', $bahagian) }}">
+                                    @can('perkhidmatan_show')
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.configuration.perkhidmatans.show', $perkhidmatan) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
-                                    @can('bahagian_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.bahagians.edit', $bahagian) }}">
+                                    @can('perkhidmatan_edit')
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.configuration.perkhidmatans.edit', $perkhidmatan) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan
-                                    @can('bahagian_delete')
-                                        <button class="btn btn-sm btn-rose mr-2" type="button" wire:click="confirm('delete', {{ $bahagian->id }})" wire:loading.attr="disabled">
+                                    @can('perkhidmatan_delete')
+                                        <button class="btn btn-sm btn-rose mr-2" type="button" wire:click="confirm('delete', {{ $perkhidmatan->id }})" wire:loading.attr="disabled">
                                             {{ trans('global.delete') }}
                                         </button>
                                     @endcan
@@ -104,7 +104,7 @@
                     {{ __('Entries selected') }}
                 </p>
             @endif
-            {{ $bahagians->links() }}
+            {{ $perkhidmatans->links() }}
         </div>
     </div>
 </div>

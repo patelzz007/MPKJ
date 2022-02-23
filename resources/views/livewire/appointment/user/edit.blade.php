@@ -105,7 +105,7 @@
         <button class="btn btn-indigo mr-2" type="submit">
             {{ trans('global.save') }}
         </button>
-        <a href="{{ route('admin.appointments.index') }}" class="btn btn-secondary">
+        <a href="{{ route('user.appointments.index') }}" class="btn btn-secondary">
             {{ trans('global.cancel') }}
         </a>
     </div>

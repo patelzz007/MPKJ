@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('perkhidmatan_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.perkhidmatans.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.configuration.perkhidmatans.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.perkhidmatan.title_singular') }}
                     </a>
                 @endcan

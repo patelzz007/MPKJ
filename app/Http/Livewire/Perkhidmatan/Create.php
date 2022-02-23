@@ -16,7 +16,7 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.perkhidmatan.create');
+        return view('livewire.configuration.perkhidmatan.create');
     }
 
     public function submit()
@@ -25,7 +25,7 @@ class Create extends Component
 
         $this->perkhidmatan->save();
 
-        return redirect()->route('admin.perkhidmatans.index');
+        return redirect()->route('admin.configuration.perkhidmatans.index');
     }
 
     protected function rules(): array

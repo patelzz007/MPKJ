@@ -17,7 +17,7 @@ class SystemCalendarController extends Controller
             'field'      => 'id',
             'prefix'     => 'appointment-calender',
             'suffix'     => '',
-            'route'      => 'admin.appointments.edit',
+            'route'      => 'admin.appointments.show',
         ],
     ];
 

@@ -58,6 +58,11 @@ class User extends Authenticatable implements HasLocalePreference
         'deleted_at',
     ];
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getIsAdminAttribute()
     {
         return $this->roles()->where('title', 'Admin')->exists();
@@ -88,6 +93,11 @@ class User extends Authenticatable implements HasLocalePreference
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function role()
+    {
+        return $this->hasOne(RoleUser::class, 'user_id', 'id');
     }
 
     protected function serializeDate(DateTimeInterface $date)

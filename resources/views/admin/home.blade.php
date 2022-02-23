@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="w-full mt-4 overflow-x-auto">
-                        <table class="table table-index">
+                        <table class="table table-index w-full">
                             <thead>
                                 <tr>
                                     @foreach($settings2['fields'] as $key => $value)

@@ -16,7 +16,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.masa-temu-janji.edit');
+        return view('livewire.configuration.masa-temu-janji.edit');
     }
 
     public function submit()
@@ -25,7 +25,7 @@ class Edit extends Component
 
         $this->masaTemuJanji->save();
 
-        return redirect()->route('admin.masa-temu-janjis.index');
+        return redirect()->route('admin.configuration.masa-temu-janjis.index');
     }
 
     protected function rules(): array

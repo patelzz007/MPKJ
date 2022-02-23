@@ -12,7 +12,7 @@
         </div>
 
         <div class="card-body">
-            @livewire('appointment.create')
+            @livewire('appointment.admin.create')
         </div>
     </div>
 </div>

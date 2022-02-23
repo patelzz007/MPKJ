@@ -67,12 +67,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('masa_temu_janji_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.masa-temu-janjis.show', $masaTemuJanji) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.configuration.masa-temu-janjis.show', $masaTemuJanji) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('masa_temu_janji_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.masa-temu-janjis.edit', $masaTemuJanji) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.configuration.masa-temu-janjis.edit', $masaTemuJanji) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

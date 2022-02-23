@@ -77,7 +77,7 @@ class Index extends Component
 
         $perkhidmatans = $query->paginate($this->perPage);
 
-        return view('livewire.perkhidmatan.index', compact('perkhidmatans', 'query'));
+        return view('livewire.configuration.perkhidmatan.index', compact('perkhidmatans', 'query'));
     }
 
     public function deleteSelected()

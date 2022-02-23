@@ -77,7 +77,7 @@ class Index extends Component
 
         $bahagians = $query->paginate($this->perPage);
 
-        return view('livewire.bahagian.index', compact('bahagians', 'query'));
+        return view('livewire.configuration.bahagian.index', compact('bahagians', 'query'));
     }
 
     public function deleteSelected()
