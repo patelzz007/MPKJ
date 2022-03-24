@@ -101,6 +101,18 @@
         </div>
     </div>
 
+
+    <div class="form-group {{ $errors->has('appointment.appointment_status') ? 'invalid' : '' }}">
+        <label class="form-label required" for="appointment_status">{{ trans('cruds.appointment.fields.appointment_status') }}</label>
+        <x-select-list class="form-control" required id="appointment_status" name="appointment_status" :options="$this->listsForFields['appointment_status']" wire:model="appointment.appointment_status" />
+        <div class="validation-message">
+            {{ $errors->first('appointment.appointment_status') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.appointment.fields.appointment_status_helper') }}
+        </div>
+    </div>
+
     <div class="form-group">
         <button class="btn btn-indigo mr-2" type="submit">
             {{ trans('global.save') }}

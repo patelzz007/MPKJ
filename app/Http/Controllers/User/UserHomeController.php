@@ -70,11 +70,14 @@ class UserHomeController
             'translation_key' => 'appointment',
         ];
 
+        
+
         $settings2['data'] = [];
         if (class_exists($settings2['model'])) {
             $settings2['data'] = $settings2['model']::latest()
                 ->take($settings2['entries_number'])
                 ->get();
+                // dd($settings2['data']);
         }
 
         if (!array_key_exists('fields', $settings2)) {

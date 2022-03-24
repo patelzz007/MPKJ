@@ -14,11 +14,18 @@ use App\Models\RoleUser;
 class Create extends Component
 {
     public Appointment $appointment;
-    public array $listsForFields = [];
+    public array $listsForFields = [
+        "appointment_status" => [
+            'Pending',
+            'Approved',
+            'Rejected',
+        ],
+    ];
 
     public function mount(Appointment $appointment)
     {
         $this->appointment = $appointment;
+        $this->appointment->appointment_status = '0';
         $this->initListsForFields();
     }
 
@@ -84,6 +91,10 @@ class Create extends Component
             'appointment.bahagian_id' => [
                 'integer',
                 'exists:bahagians,id',
+                'required',
+            ],
+            'appointment.appointment_status' => [
+                'string',
                 'required',
             ],
         ];

@@ -113,6 +113,22 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.appointment.fields.appointment_status') }}
+                            </th>
+                            <td>
+                                @if($appointment->appointment_status=="0")
+                                <span class="badge badge-pending">Pending</span>
+                                @endif
+                                @if($appointment->appointment_status=="1")
+                                <span class="badge badge-approved">Approved</span>
+                                @endif
+                                @if($appointment->appointment_status=="2")
+                                <span class="badge badge-rejected">Rejected</span>
+                                @endif
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
