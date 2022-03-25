@@ -39,7 +39,7 @@
                             </th>
                             <td>
                                 @if($appointment->masaTemuJanji)
-                                    <span class="badge badge-relationship">{{ $appointment->masaTemuJanji->masa ?? '' }}</span>
+                                <span class="badge badge-relationship">{{ $appointment->masaTemuJanji->masa ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>
@@ -109,7 +109,7 @@
                             </th>
                             <td>
                                 @if($appointment->bahagian)
-                                    <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
+                                <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>
@@ -129,14 +129,27 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.appointment.fields.cancellation_reason') }}
+                            </th>
+                            <td>
+                                @if($appointment->cancellation_reason == "")
+                                {{ "-" }}
+                                @endif
+                                @if($appointment->cancellation_reason != "")
+                                {{ $appointment->cancellation_reason }}
+                                @endif
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="form-group">
                 @can('appointment_edit')
-                    <a href="{{ route('user.appointments.edit', $appointment) }}" class="btn btn-indigo mr-2">
-                        {{ trans('global.edit') }}
-                    </a>
+                <a href="{{ route('user.appointments.edit', $appointment) }}" class="btn btn-indigo mr-2">
+                    {{ trans('global.edit') }}
+                </a>
                 @endcan
                 <a href="{{ route('user.appointments.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}

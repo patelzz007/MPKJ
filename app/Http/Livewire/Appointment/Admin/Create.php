@@ -44,6 +44,7 @@ class Create extends Component
         // $data['user_id'] = $user->id;
         //dd($user);
         // dd($this->appointment);
+        dd($this->appointment);
         $this->appointment->save();
 
         return redirect()->route('admin.appointments.index');
@@ -102,6 +103,10 @@ class Create extends Component
                 'string',
                 'required',
             ],
+            'appointment.cancellation_reason' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 
@@ -109,6 +114,6 @@ class Create extends Component
     {
         $this->listsForFields['masa_temu_janji'] = MasaTemuJanji::pluck('masa', 'id')->toArray();
         $this->listsForFields['bahagian']        = Bahagian::pluck('bahagian', 'id')->toArray();
-        $this->listsForFields['user']           =User::pluck('name', 'id')->toArray();
+        $this->listsForFields['user']           = User::pluck('name', 'id')->toArray();
     }
 }

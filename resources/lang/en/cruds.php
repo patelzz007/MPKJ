@@ -100,6 +100,8 @@ return [
             'masa_temu_janji'         => 'Masa Temu Janji',
             'masa_temu_janji_helper'  => ' ',
             'appointment_status' => 'Appointment Status',
+            'cancellation_reason' => 'Cancellation Reason',
+            'cancellation_reason_helper' => ' ',
             'appointment_status_helper' => '',
             'user'             => 'User',
             'user_helper'             => ' ',

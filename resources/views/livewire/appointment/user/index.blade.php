@@ -89,6 +89,10 @@
                             @include('components.table.sort', ['field' => 'appointment_status'])
                         </th>
                         <th>
+                            {{ trans('cruds.appointment.fields.cancellation_reason') }}
+                            @include('components.table.sort', ['field' => 'cancellation_reason'])
+                        </th>
+                        <th>
                         </th>
                     </tr>
                 </thead>
@@ -148,6 +152,14 @@
                             @endif
                             @if($appointment->appointment_status=="2")
                             <span class="badge badge-rejected">Rejected</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($appointment->cancellation_reason == "")
+                            {{ "-" }}
+                            @endif
+                            @if($appointment->cancellation_reason != "")
+                            {{ $appointment->cancellation_reason }}
                             @endif
                         </td>
                         <td>

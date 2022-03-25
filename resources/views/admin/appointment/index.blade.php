@@ -10,9 +10,9 @@
                 </h6>
 
                 @can('appointment_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.appointments.create') }}">
+                    <!-- <a class="btn btn-indigo" href="{{ route('admin.appointments.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.appointment.title_singular') }}
-                    </a>
+                    </a> -->
                 @endcan
             </div>
         </div>

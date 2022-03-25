@@ -129,6 +129,19 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.appointment.fields.cancellation_reason') }}
+                            </th>
+                            <td>
+                                @if($appointment->cancellation_reason == "")
+                                {{ "-" }}
+                                @endif
+                                @if($appointment->cancellation_reason != "")
+                                {{ $appointment->cancellation_reason }}
+                                @endif
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

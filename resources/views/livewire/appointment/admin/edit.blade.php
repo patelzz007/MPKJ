@@ -105,6 +105,7 @@
     <div class="form-group {{ $errors->has('appointment.appointment_status') ? 'invalid' : '' }}">
         <label class="form-label required" for="appointment_status">{{ trans('cruds.appointment.fields.appointment_status') }}</label>
         <x-select-list class="form-control" required id="appointment_status" name="appointment_status" :options="$this->listsForFields['appointment_status']" wire:model="appointment.appointment_status" />
+        <!-- <x-select-list class="form-control" required id="appointment_status" name="appointment_status" :options="$this->listsForFields['appointment_status']" wire:model="appointment.appointment_status" onchange="typeofdate()" /> -->
         <div class="validation-message">
             {{ $errors->first('appointment.appointment_status') }}
         </div>
@@ -112,6 +113,31 @@
             {{ trans('cruds.appointment.fields.appointment_status_helper') }}
         </div>
     </div>
+
+    <div class="form-group {{ $errors->has('appointment.cancellation_reason') ? 'invalid' : '' }}">
+        <label class="form-label" for="cancellation_reason">{{ trans('cruds.appointment.fields.cancellation_reason') }}</label>
+        <input class="form-control" type="text" name="cancellation_reason" id="cancellation_reason" wire:model.defer="appointment.cancellation_reason">
+        <div class="validation-message">
+            {{ $errors->first('appointment.cancellation_reason') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.appointment.fields.cancellation_reason_helper') }}
+        </div>
+    </div>
+
+    <!-- <div id="reason_for_cancellation" style="display:none">
+        <div class="form-group {{ $errors->has('appointment.cancellation_reason') ? 'invalid' : '' }}">
+            <label class="form-label" for="cancellation_reason">{{ trans('cruds.appointment.fields.cancellation_reason') }}</label>
+            <input class="form-control" type="text" name="cancellation_reason" id="cancellation_reason" required wire:model.defer="appointment.cancellation_reason">
+            <div class="validation-message">
+                {{ $errors->first('appointment.cancellation_reason') }}
+            </div>
+            <div class="help-block">
+                {{ trans('cruds.appointment.fields.cancellation_reason_helper') }}
+            </div>
+        </div>
+    </div> -->
+
 
     <div class="form-group">
         <button class="btn btn-indigo mr-2" type="submit">
@@ -122,3 +148,21 @@
         </a>
     </div>
 </form>
+
+<!-- @push('scripts')
+<script type="text/javascript">
+
+    $("#appointment_status").change(function() {
+        console.log("Hello World");
+        var selectedVal = $(this).val();
+        console.log(selectedVal);
+        if (selectedVal == 0) {
+            $("#reason_for_cancellation").hide();
+        } else if (selectedVal == 1) {
+            $("#reason_for_cancellation").hide();
+        } else if (selectedVal == 2) {
+            $("#reason_for_cancellation").show();
+        }
+    });
+</script>
+@endpush -->

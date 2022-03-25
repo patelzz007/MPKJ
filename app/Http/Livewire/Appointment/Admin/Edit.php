@@ -88,6 +88,10 @@ class Edit extends Component
                 'string',
                 'required',
             ],
+            'appointment.cancellation_reason' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 
