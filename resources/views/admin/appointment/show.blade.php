@@ -39,7 +39,7 @@
                             </th>
                             <td>
                                 @if($appointment->masaTemuJanji)
-                                    <span class="badge badge-masa-temu-janji">{{ $appointment->masaTemuJanji->masa ?? '' }}</span>
+                                <span class="badge badge-masa-temu-janji">{{ $appointment->masaTemuJanji->masa ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>
@@ -109,7 +109,36 @@
                             </th>
                             <td>
                                 @if($appointment->bahagian)
-                                    <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
+                                <span class="badge badge-bahagian">{{ $appointment->bahagian->bahagian ?? '' }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.appointment.fields.appointment_status') }}
+                            </th>
+                            <td>
+                                @if($appointment->appointment_status=="0")
+                                <span class="badge badge-pending">Pending</span>
+                                @endif
+                                @if($appointment->appointment_status=="1")
+                                <span class="badge badge-approved">Approved</span>
+                                @endif
+                                @if($appointment->appointment_status=="2")
+                                <span class="badge badge-rejected">Rejected</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.appointment.fields.cancellation_reason') }}
+                            </th>
+                            <td>
+                                @if($appointment->cancellation_reason == "")
+                                {{ "-" }}
+                                @endif
+                                @if($appointment->cancellation_reason != "")
+                                {{ $appointment->cancellation_reason }}
                                 @endif
                             </td>
                         </tr>
@@ -118,9 +147,9 @@
             </div>
             <div class="form-group">
                 @can('appointment_edit')
-                    <a href="{{ route('admin.appointments.edit', $appointment) }}" class="btn btn-indigo mr-2">
-                        {{ trans('global.edit') }}
-                    </a>
+                <a href="{{ route('admin.appointments.edit', $appointment) }}" class="btn btn-indigo mr-2">
+                    {{ trans('global.edit') }}
+                </a>
                 @endcan
                 <a href="{{ route('admin.appointments.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}

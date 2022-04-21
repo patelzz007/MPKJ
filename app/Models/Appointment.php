@@ -30,6 +30,8 @@ class Appointment extends Model
         'alamat_3',
         'postcode',
         'bahagian.bahagian',
+        'appointment_status',
+        'cancellation_reason',
     ];
 
     public $filterable = [
@@ -45,6 +47,8 @@ class Appointment extends Model
         'alamat_3',
         'postcode',
         'bahagian.bahagian',
+        'appointment_status',
+        'cancellation_reason',
     ];
 
     protected $dates = [
@@ -66,6 +70,8 @@ class Appointment extends Model
         'alamat_3',
         'postcode',
         'bahagian_id',
+        'appointment_status',
+        'cancellation_reason',
     ];
 
     public function getAppointmentDateAttribute($value)

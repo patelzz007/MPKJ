@@ -11,7 +11,13 @@ class Edit extends Component
 {
     public Appointment $appointment;
 
-    public array $listsForFields = [];
+    public array $listsForFields = [
+        "appointment_status" => [
+            'Pending',
+            'Approved',
+            'Rejected',
+        ],
+    ];
 
     public function mount(Appointment $appointment)
     {
@@ -76,6 +82,10 @@ class Edit extends Component
             'appointment.bahagian_id' => [
                 'integer',
                 'exists:bahagians,id',
+                'required',
+            ],
+            'appointment.appointment_status' => [
+                'string',
                 'required',
             ],
         ];

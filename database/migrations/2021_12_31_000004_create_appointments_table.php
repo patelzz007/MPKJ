@@ -20,6 +20,8 @@ class CreateAppointmentsTable extends Migration
             $table->string('alamat_2')->nullable();
             $table->string('alamat_3')->nullable();
             $table->string('postcode');
+            $table->string('appointment_status')->nullable();
+            $table->string('cancellation_reason')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

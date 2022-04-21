@@ -11,7 +11,13 @@ class Edit extends Component
 {
     public Appointment $appointment;
 
-    public array $listsForFields = [];
+    public array $listsForFields = [
+        "appointment_status" => [
+            'Pending',
+            'Approved',
+            'Rejected',
+        ],
+    ];
 
     public function mount(Appointment $appointment)
     {
@@ -30,7 +36,7 @@ class Edit extends Component
 
         $this->appointment->save();
 
-        return redirect()->route('admin.appointments.admin.index');
+        return redirect()->route('admin.appointments.index');
     }
 
     protected function rules(): array
@@ -77,6 +83,14 @@ class Edit extends Component
                 'integer',
                 'exists:bahagians,id',
                 'required',
+            ],
+            'appointment.appointment_status' => [
+                'string',
+                'required',
+            ],
+            'appointment.cancellation_reason' => [
+                'string',
+                'nullable',
             ],
         ];
     }
